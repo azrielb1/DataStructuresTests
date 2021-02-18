@@ -93,7 +93,7 @@ public void testCollisionPutValues() throws IOException {
     URI uri2 =  URI.create("www.taleoftwocities.com");
     URI uri3 =  URI.create("www.1984.com");
     URI uri4 =  URI.create("www.themoonisaharshmistress.com");
-    int putTXT1 = documentStore.putDocument(inputStream1,uri1,DocumentStore.DocumentFormat.TXT);
+    documentStore.putDocument(inputStream1,uri1,DocumentStore.DocumentFormat.TXT);
     int putTXT2 = documentStore.putDocument(inputStream2,uri2,DocumentStore.DocumentFormat.TXT);
     int putBINARY1 = documentStore.putDocument(inputStream3,uri3,DocumentStore.DocumentFormat.BINARY);
     int putBINARY2 = documentStore.putDocument(inputStream4,uri4,DocumentStore.DocumentFormat.BINARY);
@@ -101,10 +101,14 @@ public void testCollisionPutValues() throws IOException {
     int test2 = documentStore.getDocument(uri2).hashCode();
     int test3 = documentStore.getDocument(uri3).hashCode();
     int test4 = documentStore.getDocument(uri4).hashCode();
-    int putBINARY1Collision = documentStore.putDocument(inputStream1,uri1,DocumentStore.DocumentFormat.BINARY);
-    int putBINARY2Collision = documentStore.putDocument(inputStream2,uri2,DocumentStore.DocumentFormat.BINARY);
-    int putTXT1Collision = documentStore.putDocument(inputStream3,uri3,DocumentStore.DocumentFormat.TXT);
-    int putTXT2Collision = documentStore.putDocument(inputStream4,uri4,DocumentStore.DocumentFormat.TXT);
+    InputStream inputStream1b = new ByteArrayInputStream(string1.getBytes());
+    InputStream inputStream2b = new ByteArrayInputStream(string2.getBytes());
+    InputStream inputStream3b = new ByteArrayInputStream(bytes3);
+    InputStream inputStream4b = new ByteArrayInputStream(bytes4);
+    int putBINARY1Collision = documentStore.putDocument(inputStream1b,uri1,DocumentStore.DocumentFormat.BINARY);
+    int putBINARY2Collision = documentStore.putDocument(inputStream2b,uri2,DocumentStore.DocumentFormat.BINARY);
+    int putTXT1Collision = documentStore.putDocument(inputStream3b,uri3,DocumentStore.DocumentFormat.TXT);
+    int putTXT2Collision = documentStore.putDocument(inputStream4b,uri4,DocumentStore.DocumentFormat.TXT);
     Document document1 = new DocumentImpl(uri1, string1.getBytes());
     Document document2 = new DocumentImpl(uri2, string2.getBytes());
     Document document3 = new DocumentImpl(uri3, string3);
