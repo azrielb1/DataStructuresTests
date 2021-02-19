@@ -164,11 +164,11 @@ public class YehudaSTest {
 	  	int zzze = documentStore.putDocument(targetStream5, stringUri5, DocumentStore.DocumentFormat.TXT);
 	  	assertEquals(0, zzze);
 	  	
-	  	//int zzzs = documentStore.putDocument(targetStream6, stringUri6, DocumentStore.DocumentFormat.TXT);
-	  	//assertEquals(0, zzzs);
+	  	int zzzs = documentStore.putDocument(targetStream6, stringUri6, DocumentStore.DocumentFormat.TXT);
+	  	assertEquals(0, zzzs);
 	  	
-	  	int zzza = documentStore.putDocument(targetStream7, stringUri1, DocumentStore.DocumentFormat.TXT);
-	  	//assertEquals(0, zzza);
+	  	int zzza = documentStore.putDocument(targetStream7, stringUri7, DocumentStore.DocumentFormat.TXT);
+	  	assertEquals(0, zzza);
 
 	  	
 
