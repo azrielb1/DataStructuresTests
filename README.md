@@ -1,4 +1,2 @@
-# DataStructuresStageTests
-COM 1320 Junit tests for the semester project.
-
-PLEASE CONTRIBUTE
+# PLEASE CONTRIBUTE
+COM 1320 JUnit tests for the semester project.
