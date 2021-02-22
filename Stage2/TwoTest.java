@@ -12,11 +12,9 @@ public class TwoTest {
     public void oneStackImpl(){
         Stack<Integer> stack = new StackImpl();
         for(int i = 0; i < 100; i++){
-            p("Pushing " + i + " onto the stack");
             stack.push(i);
             
         }
-        int h;
         for(int i = 99; i >= 0; i--){
             assertEquals(stack.peek(), i);
             assertEquals(stack.pop(), i);
