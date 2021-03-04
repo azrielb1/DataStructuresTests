@@ -208,23 +208,20 @@ public void undoTest() throws IOException {
         assertTrue(test);
     }
 
-    //all the things I commented out I think are incorrect
-
-    /*
     @Test
     void testPointlessDeleteEmptyUndo() throws URISyntaxException {
         DocumentStoreImpl store = new DocumentStoreImpl();
         URI uri = new URI("Pizza");
         assertFalse(store.deleteDocument(uri));
         store.undo();
-    }*//* 
+    } 
     @Test
     void testPointlessDeleteFullUndo() throws URISyntaxException {
         DocumentStoreImpl store = new DocumentStoreImpl();
         URI uri = new URI("Pizza");
         assertFalse(store.deleteDocument(uri));
         store.undo(uri);
-    }*//* 
+    } 
     @Test
     void testPointlessPutEmptyUndo() throws URISyntaxException, IOException {
         DocumentStoreImpl store = new DocumentStoreImpl();
@@ -233,7 +230,7 @@ public void undoTest() throws IOException {
         URI uri = new URI("1");
         assertEquals(0, store.putDocument(null, uri, DocumentFormat.TXT));
         store.undo();
-    }*//* 
+    } 
     @Test
     void testPointlessPutFullUndo() throws URISyntaxException, IOException {
         DocumentStoreImpl store = new DocumentStoreImpl();
@@ -249,5 +246,5 @@ public void undoTest() throws IOException {
         }
         assertTrue(test);
         store.undo(uri);
-    } */
+    }
 }
